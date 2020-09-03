@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "API_KEY", "\"YOUR_API_KEY\"")
+        }
+        debug {
+            minifyEnabled true
+            buildConfigField("String", "API_KEY", "\"YOUR_API_KEY\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(":domain")
+    implementation libs.kotlin
+    implementation libs.appCompat
+    implementation libs.coreKt
+    implementation libs.retrofit
+    implementation libs.retrofitConverterJson
+    implementation libs.room
+    implementation libs.roomKtx
+    implementation libs.coroutinesAndroid
+    implementation libs.koin
+    implementation libs.okHttp
+    implementation libs.okHttpLoggingInterceptor
+    kapt libs.roomCompiler
+    testImplementation libs.junit
+    androidTestImplementation libs.junitAndroid
+}
