@@ -12,9 +12,10 @@ class HomeViewModel(
     private val context: Context,
     private val useCase: FetchPopularMoviesUseCase
 ) : BaseViewModel() {
+
     fun teste() {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("Vinicius", useCase.execute().results.toString())
+            Log.d("Batata", useCase.execute().results.toString())
         }
     }
 }

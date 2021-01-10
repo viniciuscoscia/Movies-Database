@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         minSdkVersion 21
@@ -21,11 +21,11 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "API_KEY", "\"YOUR_API_KEY\"")
+            buildConfigField("String", "API_KEY", "\"db83d8157e0ab6f583f343c32002e192\"")
         }
         debug {
             minifyEnabled true
-            buildConfigField("String", "API_KEY", "\"YOUR_API_KEY\"")
+            buildConfigField("String", "API_KEY", "\"db83d8157e0ab6f583f343c32002e192\"")
         }
     }
     compileOptions {
