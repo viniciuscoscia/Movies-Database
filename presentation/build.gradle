@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
@@ -28,6 +29,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -39,9 +46,12 @@ dependencies {
     implementation libs.coreKt
     implementation libs.material
     implementation libs.constraintLayout
+    implementation libs.glide
+    implementation libs.glideCompiler
     implementation libs.navigationFragment
     implementation libs.navigationUi
     implementation libs.lifecycleExtensions
+    implementation libs.lifecycleLiveData
     implementation libs.navigationFragment
     implementation libs.navigationUi
     implementation libs.koin
@@ -52,5 +62,6 @@ dependencies {
     implementation libs.coroutinesAndroid
     implementation libs.lifecycleViewModel
     implementation libs.loadingButton
+    implementation libs.dataBindingAdapters
     androidTestImplementation libs.espresso
 }

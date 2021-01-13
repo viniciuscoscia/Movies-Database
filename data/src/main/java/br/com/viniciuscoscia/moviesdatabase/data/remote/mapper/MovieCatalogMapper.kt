@@ -2,6 +2,7 @@ package br.com.viniciuscoscia.moviesdatabase.data.remote.mapper
 
 import br.com.viniciuscoscia.domain.moviesdatabase.entities.Movie
 import br.com.viniciuscoscia.domain.moviesdatabase.entities.MovieCatalog
+import br.com.viniciuscoscia.moviesdatabase.data.BuildConfig
 import br.com.viniciuscoscia.moviesdatabase.data.remote.model.movies.MoviesResponse
 
 object MovieCatalogMapper {
@@ -13,7 +14,7 @@ object MovieCatalogMapper {
                 originalLanguage = it.originalLanguage,
                 overview = it.overview,
                 popularity = it.popularity,
-                posterPath = it.posterPath,
+                posterPath = BuildConfig.IMAGE_BASE_URL + it.posterPath,
                 releaseDate = it.releaseDate,
                 title = it.title,
                 video = it.video,

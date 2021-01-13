@@ -22,10 +22,12 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField("String", "API_KEY", "\"db83d8157e0ab6f583f343c32002e192\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w500/\"")
         }
         debug {
             minifyEnabled true
             buildConfigField("String", "API_KEY", "\"db83d8157e0ab6f583f343c32002e192\"")
+            buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w500/\"")
         }
     }
     compileOptions {
